@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chell</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
+  </head>
+
+  <body class="container">
+    <header>
+    </header>
+    <main>
+      <%= hidden_field_tag :application_data, @application_data.to_json %>
+      <%= yield %>
+    </main>
+  </body>
+</html>

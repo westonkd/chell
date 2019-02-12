@@ -1,0 +1,25 @@
+{
+  "name": "chell",
+  "private": true,
+  "dependencies": {
+    "@instructure/ui-a11y": "^5.41.1",
+    "@instructure/ui-breadcrumb": "^5.41.1",
+    "@instructure/ui-buttons": "^5.41.1",
+    "@instructure/ui-code-editor": "^5.41.1",
+    "@instructure/ui-elements": "^5.41.1",
+    "@instructure/ui-forms": "^5.41.1",
+    "@instructure/ui-icons": "^5.41.1",
+    "@instructure/ui-layout": "^5.41.1",
+    "@instructure/ui-menu": "^5.41.1",
+    "@instructure/ui-themes": "^5.41.1",
+    "@instructure/ui-toggle-details": "^5.41.1",
+    "@rails/webpacker": "3.5",
+    "babel-preset-react": "^6.24.1",
+    "prop-types": "^15.7.1",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2"
+  }
+}
