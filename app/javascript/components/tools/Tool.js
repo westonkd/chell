@@ -84,7 +84,7 @@ const Tool = props => {
               <PublishButton
                 tool={props.tool}
                 margin="small 0 0 0"
-                updatePath={props.updatePath}
+                publishPath={props.publishPath}
                 onSuccess={publishTool}
               />
             )}
@@ -103,7 +103,8 @@ const Tool = props => {
 Tool.propTypes = {
   tool: PropTypes.object.isRequired,
   siteAdmin: PropTypes.bool.isRequired,
-  updatePath: PropTypes.string.isRequired
+  updatePath: PropTypes.string.isRequired,
+  publishPath: PropTypes.string.isRequired
 };
 
 export default Tool;

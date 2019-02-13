@@ -6,7 +6,15 @@ module Api
       skip_before_action :verify_authenticity_token
       before_action :verify_publishable, only: :publish
 
-      def publish; end
+      def publish
+        response = Providers::Oauth::DynamicRegistrationProvider.new(
+          tool.redirect_uris,
+          tool.name,
+          tool.logo_url,
+          tool.json_config
+        ).register_client!
+        render json: response.parsed_response, status: response.code
+      end
 
       def create
         render json: new_tool
@@ -21,7 +29,7 @@ module Api
       private
 
       def verify_publishable
-        return if @tool.user == current_user && @tool.workflow_state == Tool::APPROVED
+        return if tool.user == current_user && @tool.workflow_state == Tool::APPROVED
 
         head :unauthorized
       end

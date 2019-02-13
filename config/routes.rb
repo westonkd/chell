@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       scope(controller: :tools_api) do
-        put 'tools/:id/publish', action: :update, as: :tool_publish
+        put 'tools/:id/publish', action: :publish, as: :tool_publish
         put 'tools/:id', action: :update, as: :tool_update
         post 'tools', action: :create, as: :tool_api_create
       end

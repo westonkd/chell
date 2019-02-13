@@ -13,7 +13,7 @@ const PublishButton = props => {
   const updateTool = () => {
     setPendingRequest(true);
     axios
-      .put(props.updatePath.replace(":id", props.tool.id), {
+      .put(props.publishPath.replace(":id", props.tool.id), {
         workflow_state: "published"
       })
       .then(response => {
@@ -50,7 +50,7 @@ const PublishButton = props => {
 PublishButton.propTypes = {
   tool: PropTypes.object.isRequired,
   margin: PropTypes.string,
-  updatePath: PropTypes.string.isRequired,
+  publishPath: PropTypes.string.isRequired,
   onSuccess: PropTypes.func.isRequired
 };
 

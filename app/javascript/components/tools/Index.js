@@ -18,6 +18,7 @@ const Index = props => {
             key={tool.id}
             siteAdmin={props.applicationData.user.siteAdmin}
             updatePath={props.toolData.update_path}
+            publishPath={props.toolData.publish_path}
           />
         ))}
       </FlexItem>
@@ -29,6 +30,7 @@ Index.propTypes = {
   toolData: PropTypes.shape({
     index_path: PropTypes.string.isRequired,
     update_path: PropTypes.string.isRequired,
+    publish_path: PropTypes.string.isRequired,
     tools: PropTypes.array.isRequired
   })
 };
