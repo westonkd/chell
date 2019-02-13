@@ -8,14 +8,23 @@ import { Button } from "@instructure/ui-buttons";
 
 import State from "./State";
 import DetailsTray from "./DetailsTray";
+import ApproveButton from "./ApproveButton";
 
 const Tool = props => {
   const [open, setOpen] = useState(false);
-  const date = new Date(props.tool.created_at).toLocaleDateString(navigator.language);
+  const [workflowState, setWorkflowState] = useState(props.tool.workflow_state)
+
+  const date = new Date(props.tool.created_at).toLocaleDateString(
+    navigator.language
+  );
 
   const toggleTray = () => {
     setOpen(!open);
   };
+
+  const approveTool = () => {
+    setWorkflowState('approved')
+  }
 
   return (
     <View
@@ -26,7 +35,7 @@ const Tool = props => {
       background="default"
       shadow="resting"
       width="250px"
-      height="300px"
+      height="360px"
     >
       <Img
         src={props.tool.logo_url}
@@ -45,7 +54,7 @@ const Tool = props => {
           <div style={{ borderTop: "solid 1px #CBCBCB" }}>
             <Flex justifyItems="center" margin="medium 0">
               <FlexItem>
-                <State state={props.tool.workflow_state} />
+                <State state={workflowState} />
               </FlexItem>
             </Flex>
           </div>
@@ -56,15 +65,25 @@ const Tool = props => {
               View Details
             </View>
           </Button>
+          {workflowState === "reviewable" && (
+            <ApproveButton tool={props.tool} margin="small 0 0 0" updatePath={props.updatePath} onSuccess={approveTool} />
+          )}
         </FlexItem>
       </Flex>
-      <DetailsTray tool={props.tool} open={open} onDismiss={toggleTray} date={date}/>
+      <DetailsTray
+        tool={props.tool}
+        open={open}
+        onDismiss={toggleTray}
+        date={date}
+      />
     </View>
   );
 };
 
 Tool.propTypes = {
-  tool: PropTypes.object.isRequired
+  tool: PropTypes.object.isRequired,
+  siteAdmin: PropTypes.bool.isRequired,
+  updatePath: PropTypes.string.isRequired
 };
 
 export default Tool;

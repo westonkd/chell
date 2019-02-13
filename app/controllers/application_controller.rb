@@ -19,7 +19,8 @@ class ApplicationController < ActionController::Base
       user: {
         id: current_user&.id,
         name: current_user&.username,
-        avatar_url: current_user&.avatar_url
+        avatar_url: current_user&.avatar_url,
+        siteAdmin: current_user&.site_admin?
       },
       app: {
         signin_path: '/auth/github',
