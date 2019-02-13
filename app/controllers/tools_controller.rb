@@ -20,7 +20,8 @@ class ToolsController < ApplicationController
     @tool_data = {
       api_create_path: api_v1_tool_api_create_path,
       index_path: tool_index_path,
-      update_path: api_v1_tool_update_path(id: ':id')
+      update_path: api_v1_tool_update_path(id: ':id'),
+      publish_path: api_v1_tool_publish_path(id: ':id')
     }
   end
 end

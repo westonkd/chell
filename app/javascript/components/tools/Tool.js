@@ -9,10 +9,11 @@ import { Button } from "@instructure/ui-buttons";
 import State from "./State";
 import DetailsTray from "./DetailsTray";
 import ApproveButton from "./ApproveButton";
+import PublishButton from "./PublishButton";
 
 const Tool = props => {
   const [open, setOpen] = useState(false);
-  const [workflowState, setWorkflowState] = useState(props.tool.workflow_state)
+  const [workflowState, setWorkflowState] = useState(props.tool.workflow_state);
 
   const date = new Date(props.tool.created_at).toLocaleDateString(
     navigator.language
@@ -23,8 +24,12 @@ const Tool = props => {
   };
 
   const approveTool = () => {
-    setWorkflowState('approved')
-  }
+    setWorkflowState("approved");
+  };
+
+  const publishTool = () => {
+    setWorkflowState("published");
+  };
 
   return (
     <View
@@ -65,9 +70,24 @@ const Tool = props => {
               View Details
             </View>
           </Button>
-          {workflowState === "reviewable" && (
-            <ApproveButton tool={props.tool} margin="small 0 0 0" updatePath={props.updatePath} onSuccess={approveTool} />
-          )}
+          {workflowState === "reviewable" &&
+            props.siteAdmin && (
+              <ApproveButton
+                tool={props.tool}
+                margin="small 0 0 0"
+                updatePath={props.updatePath}
+                onSuccess={approveTool}
+              />
+            )}
+          {workflowState === "approved" &&
+            !props.siteAdmin && (
+              <PublishButton
+                tool={props.tool}
+                margin="small 0 0 0"
+                updatePath={props.updatePath}
+                onSuccess={publishTool}
+              />
+            )}
         </FlexItem>
       </Flex>
       <DetailsTray

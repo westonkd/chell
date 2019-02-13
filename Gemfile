@@ -39,6 +39,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'omniauth-github'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'httparty', '~> 0.13.7'
+gem 'json-jwt', '~> 1.5', '>= 1.5.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

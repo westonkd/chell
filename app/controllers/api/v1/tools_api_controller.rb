@@ -4,18 +4,27 @@ module Api
   module V1
     class ToolsApiController < ApplicationController
       skip_before_action :verify_authenticity_token
+      before_action :verify_publishable, only: :publish
+
+      def publish; end
 
       def create
         render json: new_tool
       end
 
       def update
-        head :unauthorized and return unless current_user.site_admin?
+        head(:unauthorized) && return unless current_user.site_admin?
         tool.update!(update_params)
         render json: tool
       end
 
       private
+
+      def verify_publishable
+        return if @tool.user == current_user && @tool.workflow_state == Tool::APPROVED
+
+        head :unauthorized
+      end
 
       def tool
         @tool ||= Tool.find(params[:id])
