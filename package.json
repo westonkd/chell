@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@instructure/ui-a11y": "^5.41.1",
+    "@instructure/ui-alerts": "^5.41.1",
     "@instructure/ui-breadcrumb": "^5.41.1",
     "@instructure/ui-buttons": "^5.41.1",
     "@instructure/ui-code-editor": "^5.41.1",
@@ -14,6 +15,7 @@
     "@instructure/ui-themes": "^5.41.1",
     "@instructure/ui-toggle-details": "^5.41.1",
     "@rails/webpacker": "3.5",
+    "axios": "^0.18.0",
     "babel-preset-react": "^6.24.1",
     "prop-types": "^15.7.1",
     "react": "^16.8.1",

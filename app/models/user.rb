@@ -4,6 +4,8 @@ class User < ApplicationRecord
   validates :email, :uuid, :provider, :avatar_url, :username, :oauth_token, presence: true
   validates :email, :uuid, :username, uniqueness: true
 
+  has_many :tools
+
   def self.omniauth_find_or_create(auth)
     user = find_or_create_by!(
       provider: auth.provider,
