@@ -13,6 +13,15 @@ module Api
           tool.logo_url,
           tool.json_config
         ).register_client!
+
+        if response.ok?
+          tool.update!(
+            workflow_state: Tool::PUBLISHED,
+            client_id: response.parsed_response['client_id'],
+            client_secret: response.parsed_response['client_secret']
+          )
+        end
+
         render json: response.parsed_response, status: response.code
       end
 

@@ -3,7 +3,8 @@
 class Tool < ApplicationRecord
   REVIEWABLE = 'reviewable'.freeze
   APPROVED = 'approved'.freeze
-  STATES = [REVIEWABLE,  APPROVED, 'rejected', 'published'].freeze
+  PUBLISHED = 'published'.freeze
+  STATES = [REVIEWABLE,  APPROVED, 'rejected', PUBLISHED].freeze
 
   validates :name,
             :logo_url,
