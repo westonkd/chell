@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { Flex, FlexItem } from "@instructure/ui-layout";
 import BreadCrumb from "../shared/BreadCrumb";
-import CreateForm from "./CreateForm";
+import Form from "./Form"
 
 const Create = props => {
   return (
@@ -13,7 +13,7 @@ const Create = props => {
           linkItems={[[props.toolData.index_path, "Tools"]]}
           currentPage="New Tool"
         />
-        <CreateForm createEndpoint={props.toolData.api_create_path} />
+        <Form createEndpoint={props.toolData.api_create_path} />
       </FlexItem>
     </Flex>
   );
