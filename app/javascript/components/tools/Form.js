@@ -20,7 +20,7 @@ const Form = props => {
           <StepComponent params={params} setParams={setParams} />
           <Flex justifyItems="end" margin="0 small 0 0" >
             <FlexItem>
-              <SubmitButton step={step} setStep={setStep} createEndpoint={props.createEndpoint} params={params}/>
+              <SubmitButton step={step} setStep={setStep} createEndpoint={props.createEndpoint} params={params} redirectUrl={props.redirectUrl}/>
             </FlexItem>
           </Flex>
       </FlexItem>
@@ -29,6 +29,7 @@ const Form = props => {
 };
 
 Form.propTypes = {
+  redirectUrl: PropTypes.string.isRequired,
   createEndpoint: PropTypes.string.isRequired
 };
 

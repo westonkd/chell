@@ -17,6 +17,9 @@ class CreateTools < ActiveRecord::Migration[5.2]
       t.text :installation_instructions
       t.text :privacy_policy
       t.timestamps
+      t.string :client_id
+      t.text :client_secret
+      t.text :reason_rejected
 
       t.index :name
       t.index :email

@@ -13,7 +13,7 @@ const Create = props => {
           linkItems={[[props.toolData.index_path, "Tools"]]}
           currentPage="New Tool"
         />
-        <Form createEndpoint={props.toolData.api_create_path} />
+        <Form createEndpoint={props.toolData.api_create_path} redirectUrl={props.toolData.index_path} />
       </FlexItem>
     </Flex>
   );

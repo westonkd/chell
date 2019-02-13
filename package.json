@@ -12,6 +12,7 @@
     "@instructure/ui-icons": "^5.41.1",
     "@instructure/ui-layout": "^5.41.1",
     "@instructure/ui-menu": "^5.41.1",
+    "@instructure/ui-overlays": "^5.41.1",
     "@instructure/ui-themes": "^5.41.1",
     "@instructure/ui-toggle-details": "^5.41.1",
     "@rails/webpacker": "3.5",

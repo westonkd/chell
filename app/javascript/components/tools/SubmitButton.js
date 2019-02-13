@@ -18,7 +18,7 @@ const SubmitButton = props => {
     axios
       .post(props.createEndpoint, props.params)
       .then(response => {
-
+        window.location.replace(props.redirectUrl);
       })
       .catch(error => {
         console.error(error);
@@ -47,6 +47,7 @@ const SubmitButton = props => {
 };
 
 SubmitButton.propTypes = {
+  redirectUrl: PropTypes.string.isRequired,
   step: PropTypes.number.isRequired,
   setStep: PropTypes.func.isRequired,
   createEndpoint: PropTypes.string.isRequired,

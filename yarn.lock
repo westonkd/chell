@@ -268,7 +268,7 @@
     keycode "^2"
     prop-types "^15"
 
-"@instructure/ui-overlays@^5":
+"@instructure/ui-overlays@^5", "@instructure/ui-overlays@^5.41.1":
   version "5.41.1"
   resolved "https://registry.yarnpkg.com/@instructure/ui-overlays/-/ui-overlays-5.41.1.tgz#2b5f228880be40d72390ca10fcfb73617a9604a3"
   integrity sha512-0v58JmsVGOrTI+waeG2X266FDHNKF2oU+r8IGXf80WQTaiZnnYcH37dT5QcdbkKfpf1FIniPyPS2UzuI2NeaMw==

@@ -32,6 +32,9 @@ ActiveRecord::Schema.define(version: 2019_02_13_155451) do
     t.text "privacy_policy"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "client_id"
+    t.text "client_secret"
+    t.text "reason_rejected"
     t.index ["email"], name: "index_tools_on_email"
     t.index ["name"], name: "index_tools_on_name"
     t.index ["organization"], name: "index_tools_on_organization"

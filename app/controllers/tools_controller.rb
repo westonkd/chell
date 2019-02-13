@@ -5,6 +5,7 @@ class ToolsController < ApplicationController
   end
 
   def index
+    @tool_data.merge!({tools: Tool.where(user: current_user)})
   end
 
   def populate_tool_data
