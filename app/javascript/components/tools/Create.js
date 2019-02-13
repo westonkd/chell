@@ -13,7 +13,7 @@ const Create = props => {
           linkItems={[[props.toolData.index_path, "Tools"]]}
           currentPage="New Tool"
         />
-        <CreateForm />
+        <CreateForm createEndpoint={props.toolData.api_create_path} />
       </FlexItem>
     </Flex>
   );
@@ -21,7 +21,8 @@ const Create = props => {
 
 Create.propTypes = {
   toolData: PropTypes.shape({
-    index_path: PropTypes.string.isRequired
+    index_path: PropTypes.string.isRequired,
+    api_create_path: PropTypes.string.isRequired
   })
 };
 

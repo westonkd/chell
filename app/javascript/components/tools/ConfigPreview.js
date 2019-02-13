@@ -36,7 +36,7 @@ const ConfigPreview = props => {
             </tr>
             <tr>
               <th scope="row">Scopes</th>
-              <td>{parsedConfig.scopes && parsedConfig.scopes.map((scope) => (<div><code>{scope}</code></div>))}</td>
+              <td>{parsedConfig.scopes && parsedConfig.scopes.map((scope) => (<div key={scope} ><code>{scope}</code></div>))}</td>
             </tr>
           </tbody>
         </Table>

@@ -5,9 +5,9 @@ import { parseDataNode } from "../../components/shared/RenderUtils";
 import Index from "../../components/tools/Index";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const applicationData = parseDataNode("application_data");
+  const toolData = parseDataNode("tool_data");
   render(
-    <Index toolData={applicationData.tools} />,
+    <Index toolData={toolData} />,
     document.querySelector("#tool_index_content")
   );
 });
