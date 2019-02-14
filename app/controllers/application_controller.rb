@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   private
 
   def require_user
-    redirect_to home_url unless current_user.present?
+    redirect_to '/auth/github' unless current_user.present?
   end
 
   def populate_application_data

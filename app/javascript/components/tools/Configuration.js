@@ -18,7 +18,7 @@ const Configuration = props => {
       <FlexItem padding="small">
         <TextArea
           label="JSON Configuration"
-          maxHeight="10rem"
+          height="30rem"
           name="json_config"
           onChange={addParam}
           margin="0 0 small 0"

@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :tools
 
   def self.omniauth_find_or_create(auth)
-    user = find_or_create_by!(
+    user = find_or_initialize_by(
       provider: auth.provider,
       email: auth.info.email,
       avatar_url: auth.info.image,

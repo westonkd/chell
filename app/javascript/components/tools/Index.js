@@ -4,6 +4,7 @@ import { Flex, FlexItem } from "@instructure/ui-layout";
 
 import BreadCrumb from "../shared/BreadCrumb";
 import Tool from "./Tool";
+import NewTool from "./NewTool";
 
 const Index = props => {
   return (
@@ -12,6 +13,9 @@ const Index = props => {
         <BreadCrumb currentPage="Tools" />
       </FlexItem>
       <FlexItem>
+        {!props.applicationData.user.siteAdmin && (
+          <NewTool toolCreatePath={props.toolData.tool_create_path} />
+        )}
         {props.toolData.tools.map(tool => (
           <Tool
             tool={tool}

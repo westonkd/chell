@@ -10,6 +10,7 @@ import State from "./State";
 import DetailsTray from "./DetailsTray";
 import ApproveButton from "./ApproveButton";
 import PublishButton from "./PublishButton";
+import RejectButton from "./RejectButton"
 
 const Tool = props => {
   const [open, setOpen] = useState(false);
@@ -31,6 +32,10 @@ const Tool = props => {
     setWorkflowState("published");
   };
 
+  const rejectTool = () => {
+    setWorkflowState("rejected")
+  }
+
   return (
     <View
       as="span"
@@ -40,7 +45,7 @@ const Tool = props => {
       background="default"
       shadow="resting"
       width="250px"
-      height="360px"
+      height={ props.siteAdmin ? "410px" : "360px" }
     >
       <Img
         src={props.tool.logo_url}
@@ -72,12 +77,20 @@ const Tool = props => {
           </Button>
           {workflowState === "reviewable" &&
             props.siteAdmin && (
-              <ApproveButton
-                tool={props.tool}
-                margin="small 0 0 0"
-                updatePath={props.updatePath}
-                onSuccess={approveTool}
-              />
+              <div>
+                <ApproveButton
+                  tool={props.tool}
+                  margin="small 0 0 0"
+                  updatePath={props.updatePath}
+                  onSuccess={approveTool}
+                />
+                <RejectButton
+                  tool={props.tool}
+                  margin="small 0 0 0"
+                  updatePath={props.updatePath}
+                  onSuccess={rejectTool}
+                />
+              </div>
             )}
           {workflowState === "approved" &&
             !props.siteAdmin && (

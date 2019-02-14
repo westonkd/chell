@@ -15,14 +15,14 @@ const Form = props => {
   const StepComponent = steps[step];
 
   return (
-    <Flex direction="column" margin="x-large 0 0 0">
+    <Flex direction="column">
       <FlexItem>
-          <StepComponent params={params} setParams={setParams} />
-          <Flex justifyItems="end" margin="0 small 0 0" >
-            <FlexItem>
-              <SubmitButton step={step} setStep={setStep} createEndpoint={props.createEndpoint} params={params} redirectUrl={props.redirectUrl}/>
-            </FlexItem>
-          </Flex>
+        <StepComponent params={params} setParams={setParams} />
+        <Flex justifyItems="end" margin="0 small 0 0" >
+          <FlexItem>
+            <SubmitButton step={step} setStep={setStep} createEndpoint={props.createEndpoint} params={params} redirectUrl={props.redirectUrl}/>
+          </FlexItem>
+        </Flex>
       </FlexItem>
     </Flex>
   )

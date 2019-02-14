@@ -11,7 +11,7 @@ import { Link } from "@instructure/ui-elements";
 const Header = props => {
   return (
     <Flex margin="small 0 0 0">
-      <FlexItem grow shrink padding="none medium none none">
+      <FlexItem grow shrink padding="none small none none">
         <Heading margin="0 0 0 0" level="h1" as="h2">
           Canvas Developer Portal
         </Heading>

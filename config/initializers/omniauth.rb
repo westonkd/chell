@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-opts = { scope: 'read:user, user:email' }
+opts = { scope: 'user' }
 
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider(
