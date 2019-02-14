@@ -44,6 +44,19 @@
     keycode "^2"
     prop-types "^15"
 
+"@instructure/ui-billboard@^5.41.1":
+  version "5.41.1"
+  resolved "https://registry.yarnpkg.com/@instructure/ui-billboard/-/ui-billboard-5.41.1.tgz#4761fdb96947e931c6a2fbf2833e41b411de0c17"
+  integrity sha512-8mRR1egmhtvPn8/wmKs18CpX2BAZxfyt05AXUELbEFpD2fHpqK+83Tzyw01LghRGY8jRVou2NQGXqbRVB9isGQ==
+  dependencies:
+    "@babel/runtime" "^7"
+    "@instructure/ui-elements" "^5"
+    "@instructure/ui-layout" "^5"
+    "@instructure/ui-themeable" "^5"
+    "@instructure/ui-utils" "^5"
+    classnames "^2"
+    prop-types "^15"
+
 "@instructure/ui-breadcrumb@^5.41.1":
   version "5.41.1"
   resolved "https://registry.yarnpkg.com/@instructure/ui-breadcrumb/-/ui-breadcrumb-5.41.1.tgz#fc5db4ca4a3735c6a035b15f48d796a99f721b08"

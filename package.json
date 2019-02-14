@@ -4,6 +4,7 @@
   "dependencies": {
     "@instructure/ui-a11y": "^5.41.1",
     "@instructure/ui-alerts": "^5.41.1",
+    "@instructure/ui-billboard": "^5.41.1",
     "@instructure/ui-breadcrumb": "^5.41.1",
     "@instructure/ui-buttons": "^5.41.1",
     "@instructure/ui-code-editor": "^5.41.1",

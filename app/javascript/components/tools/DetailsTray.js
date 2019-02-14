@@ -60,6 +60,7 @@ const DetailsTray = props => {
         <Text>Client Secret</Text>
         <br />
         <Secret secret={props.tool.client_secret} />
+        <br /><br />
       </div>
     );
   };
@@ -87,8 +88,8 @@ const DetailsTray = props => {
           <View display="inline-block" margin="small 0 0 0">
             {props.tool.workflow_state === "rejected" && reasonRejected()}
             {redirectURIs()}
-            {jsonConfig()}
             {props.tool.workflow_state === "published" && keys()}
+            {jsonConfig()}
           </View>
         </View>
       </View>

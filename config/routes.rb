@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   scope(controller: :tools) do
-    get 'tools/new', action: :create
+    get 'tools/new', action: :create, as: :tool_create
     get 'tools', action: :index, as: :tool_index
   end
 

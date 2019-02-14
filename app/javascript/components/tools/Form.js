@@ -15,7 +15,7 @@ const Form = props => {
   const StepComponent = steps[step];
 
   return (
-    <Flex direction="column">
+    <Flex direction="column" margin="x-large 0 0 0">
       <FlexItem>
           <StepComponent params={params} setParams={setParams} />
           <Flex justifyItems="end" margin="0 small 0 0" >

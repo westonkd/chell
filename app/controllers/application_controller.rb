@@ -24,7 +24,9 @@ class ApplicationController < ActionController::Base
       },
       app: {
         signin_path: '/auth/github',
-        signout_path: signout_path
+        signout_path: signout_path,
+        tool_index_path: tool_index_path,
+        tool_create_path: tool_create_path
       }
     }
   end
