@@ -18,10 +18,18 @@ const Submission = props => {
       <FlexItem padding="small">
         <Flex justifyItems="space-between" margin="0 0 small 0">
           <FlexItem width="49%">
-            <TextInput label="Author Name" name="author_name" onChange={addParam}/>
+            <TextInput
+              label="Author Name"
+              name="author_name"
+              onChange={addParam}
+            />
           </FlexItem>
           <FlexItem width="49%">
-            <TextInput label="Organization" name="organization" onChange={addParam}/>
+            <TextInput
+              label="Organization"
+              name="organization"
+              onChange={addParam}
+            />
           </FlexItem>
         </Flex>
         <TextArea

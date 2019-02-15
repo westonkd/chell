@@ -1,4 +1,10 @@
 module ToolsApiHelper
+  def verify_tool_ownership
+    return if tool.user == current_user || current_user.site_admin?
+
+    head :unauthorized
+  end
+
   def verify_publishable
     return if tool.user == current_user && @tool.workflow_state == Tool::APPROVED
 

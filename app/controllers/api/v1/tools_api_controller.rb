@@ -6,6 +6,7 @@ module Api
       include ToolsApiHelper
 
       skip_before_action :verify_authenticity_token
+      before_action :verify_tool_ownership, only: %i[publish destroy update]
       before_action :verify_publishable, only: :publish
 
       def publish
@@ -25,6 +26,11 @@ module Api
         end
 
         render json: response.parsed_response, status: response.code
+      end
+
+      def destroy
+        tool.destroy!
+        head :no_content
       end
 
       def create

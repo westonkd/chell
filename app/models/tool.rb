@@ -24,9 +24,19 @@ class Tool < ApplicationRecord
   serialize :redirect_uris, Array
   serialize :json_config, Hash
 
+  before_destroy :destroy_client!
+
   belongs_to :user
 
   private
+
+  def destroy_client!
+    return if client_id.blank?
+
+    provider = Providers::Oauth::DynamicRegistrationProvider.new
+    response = provider.destroy_client!(client_id)
+    throw(:abort) unless response.no_content?
+  end
 
   def redirect_uris_valid
     redirect_uris.each do |uri|

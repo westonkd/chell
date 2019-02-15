@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       scope(controller: :tools_api) do
         put 'tools/:id/publish', action: :publish, as: :tool_publish
         put 'tools/:id', action: :update, as: :tool_update
+        delete 'tools/:id', action: :destroy, as: :tool_destroy
         post 'tools', action: :create, as: :tool_api_create
       end
     end

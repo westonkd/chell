@@ -11,7 +11,12 @@ const Secret = props => {
 
   if (hidden) {
     return (
-      <Button variant="link" onClick={toggleHidden} margin="none" padding="none">
+      <Button
+        variant="link"
+        onClick={toggleHidden}
+        margin="none"
+        padding="none"
+      >
         show secret
       </Button>
     );

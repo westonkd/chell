@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { View } from "@instructure/ui-layout";
-import { Billboard } from '@instructure/ui-billboard'
-import IconAdd from '@instructure/ui-icons/lib/Line/IconAdd'
+import { Billboard } from "@instructure/ui-billboard";
+import IconAdd from "@instructure/ui-icons/lib/Line/IconAdd";
 
 const NewTool = props => {
   return (
@@ -19,7 +19,7 @@ const NewTool = props => {
       <Billboard
         message="Create new tool"
         href={props.toolCreatePath}
-        hero={(size) => <IconAdd size={size} />}
+        hero={size => <IconAdd size={size} />}
         margin="xx-large 0 0 0"
       />
     </View>

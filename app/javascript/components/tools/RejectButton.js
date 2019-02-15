@@ -7,7 +7,7 @@ import { Spinner } from "@instructure/ui-elements";
 import { Img } from "@instructure/ui-elements";
 import { Tray } from "@instructure/ui-overlays";
 import { Text } from "@instructure/ui-elements";
-import { TextArea } from '@instructure/ui-forms';
+import { TextArea } from "@instructure/ui-forms";
 
 const RejectButton = props => {
   const [open, setOpen] = useState(false);
@@ -18,9 +18,9 @@ const RejectButton = props => {
     setOpen(!open);
   };
 
-  const updateReasonRejected = (e) => {
-    setReasonRejected(e.currentTarget.value)
-  }
+  const updateReasonRejected = e => {
+    setReasonRejected(e.currentTarget.value);
+  };
 
   const rejectTool = () => {
     setPendingRequest(true);
@@ -85,11 +85,11 @@ const RejectButton = props => {
               onClick={rejectTool}
             >
               <View display="block" textAlign="center">
-              {pendingRequest ? (
-                <Spinner title="Creating" size="x-small" />
-              ) : (
-                "Reject"
-              )}
+                {pendingRequest ? (
+                  <Spinner title="Creating" size="x-small" />
+                ) : (
+                  "Reject"
+                )}
               </View>
             </Button>
           </View>

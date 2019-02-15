@@ -10,7 +10,7 @@ import State from "./State";
 import DetailsTray from "./DetailsTray";
 import ApproveButton from "./ApproveButton";
 import PublishButton from "./PublishButton";
-import RejectButton from "./RejectButton"
+import RejectButton from "./RejectButton";
 
 const Tool = props => {
   const [open, setOpen] = useState(false);
@@ -33,8 +33,8 @@ const Tool = props => {
   };
 
   const rejectTool = () => {
-    setWorkflowState("rejected")
-  }
+    setWorkflowState("rejected");
+  };
 
   return (
     <View
@@ -45,7 +45,7 @@ const Tool = props => {
       background="default"
       shadow="resting"
       width="250px"
-      height={ props.siteAdmin ? "410px" : "360px" }
+      height={props.siteAdmin ? "410px" : "360px"}
     >
       <Img
         src={props.tool.logo_url}
@@ -108,6 +108,7 @@ const Tool = props => {
         open={open}
         onDismiss={toggleTray}
         date={date}
+        updatePath={props.updatePath}
       />
     </View>
   );
