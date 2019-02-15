@@ -37,6 +37,7 @@ const DetailsTray = props => {
         <TextArea
           maxHeight="20rem"
           defaultValue={JSON.stringify(props.tool.json_config)}
+          width="300px"
         />
       </div>
     );

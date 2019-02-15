@@ -36,7 +36,7 @@ const DeleteButton = props => {
         {pendingRequest ? (
           <Spinner title="Creating" size="x-small" />
         ) : (
-          "Delete Key"
+          "Delete Tool"
         )}
       </View>
     </Button>
